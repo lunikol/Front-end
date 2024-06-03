@@ -1,13 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background: seagreen;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 300;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.wrapper{
+    width: 1280px;
+    margin: 50px auto;
 }
+
+header {
+    position: relative;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 20px;
+}
+header ul.nav {
+    float: right;
+    list-style: none;
+}
+header ul.nav li {
+    display: inline ;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease-in-out;
+}
+
+header ul.nav li:hover{
+    opacity: 0.5;
+
+}
+header .shop-cart-button{
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease-in-out;
+}
+header .shop-cart-button:hover,
+    header .shop-cart-button.active {
+        color: darkred;
+    transform: scale(1.5);
+    }
+
+header .shop-cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    background: seagreen;
+    -webkit-box-shadow: 4px 5px 39px -7px #000000;
+    box-shadow: 4px 5px 39px -7px #000000;
+    z-index: 1000;
+
+    padding: 20px;
+    padding-bottom: 0;
+
+}
+header .shop-cart .item {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+header .shop-cart .item img {
+    width: 70px;
+    float: left;
+    margin-bottom: 20px;
+}
+header .shop-cart .item h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+header .shop-cart .item b {
+    color: yellow;
+    font-weight: 600;
+}
+
+header .shop-cart .item .delete-icon {
+    color: red;
+    float: right;
+    position: relative;
+    top: -40px;
+    cursor: pointer;
+    transition: color, transform 500ms ease-in-out;
+
+}
+
+header .shop-cart .item .delete-icon:hover {
+    color: darkred;
+    transform: scale(1.5);
+}
+
+header .banner {
+    margin: 50px 0;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background: #b6bfc7 url('./img/bg1.jpg') no-repeat;
+    position: relative;
+}
+header .banner::after{
+    content: 'Самые лучшие рецепты всего мира, в быстром доступе ' ;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 500px;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+header .banner::before{
+    content: 'от лучших поваров ' ;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: 500px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+main{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+main .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: seagreen;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+
+}
+
+main .item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 500ms ease-in-out;
+}
+main .item img:hover {
+    transform: scale(1.05);
+}
+
+main h2,
+main p,
+main b {
+    margin: 10px 20px;
+    color: white;
+}
+main b {color: cornsilk}
+
+main .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: darkgoldenrod;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 500ms ease-in-out;
+}
+main .add-to-cart:hover {
+    transform: scale(1.5) translateY(-5px);
+
+}
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Пример стилей для кнопок */
+button {
+    background-color: #4CAF50; /* Зеленый цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #45a049; /* Темно-зеленый цвет при наведении */
+}
+
+button:active {
+    background-color: #3e8e41; /* Зеленый цвет при нажатии */
+}
+
+.login-button,
+.logout-button {
+    background-color: #FC4445;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.logout-button:hover {
+    background-color: #FF6667;
+}
+
+.login-button:active,
+.logout-button:active {
+    background-color: #D32F2F;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2f526a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #D32F2F;
+}
+
+/* Profile.css */
+
+.profile-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.profile-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-page .form-group {
+    margin-bottom: 23px;
+}
+
+.profile-page label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.profile-page input[type="text"],
+.profile-page input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.profile-page input[type="text"]:focus,
+.profile-page input[type="password"]:focus {
+    border-color: #FC4445;
+    outline: none;
+    box-shadow: 0 0 10px rgba(252, 68, 69, 0.5);
+}
+
+.profile-page button[type="submit"],
+.profile-page .login-button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+    color: #fff;
+    background-color: #FC4445;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-page button[type="submit"]:hover,
+.profile-page .login-button:hover {
+    background-color: #ff3333;
+}
+
+.profile-page ul,
+.profile-page p {
+    word-wrap: break-word;
+    line-height: 2.0;
+}
+
+.location-page {
+    padding: 20px;
+}
+
+.location-page h1 {
+    margin-bottom: 20px;
+}
+
+.location-page p,
+.location-page ul {
+    margin-bottom: 15px;
+}
+
+.location-page ul li {
+    margin-bottom: 10px;
+}
+
+
+.nav li a {
+    color: #343a40;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav li a:hover:not(.login-button) {
+    background-color: #f8f9fa;
+}
+
+.nav li a.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.contact-page {
+    padding: 20px;
+}
+
+.contact-page h1 {
+    margin-bottom: 20px;
+}
+
+.contact-page p,
+.contact-page ul {
+    margin-bottom: 15px;
+}
+
+.contact-page ul li {
+    margin-bottom: 10px;
+}
+
+.reviews-page {
+    padding: 20px;
+}
+
+.reviews-page h1 {
+    margin-bottom: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+}
+
+.review h3 {
+    margin-bottom: 10px;
+}
+
